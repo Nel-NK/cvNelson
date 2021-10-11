@@ -1,0 +1,429 @@
+/* GENERAL*/
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "lato", sans-serif;
+  border: 10px solid #87cefa;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+section {
+  padding: 40px 0 40px 0; /* Pour les séparer les unes des autres*/
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+section .heading {
+  text-align: center;
+  padding: 18px 0 20px 0;
+}
+.red-devider {
+  width: 180px;
+  height: 2px;
+  background: #d82c2e;
+  margin: 5px auto 0 auto;
+}
+
+section .heading {
+  text-transform: uppercase;
+}
+
+.white-devider {
+  width: 180px;
+  height: 2px;
+  background: white;
+  margin: 5px auto 0 auto;
+}
+
+.btn1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid white;
+  color: white;
+  margin-top: 20px;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 3px;
+  transition: all 0.5s ease-in 0s;
+  background: transparent;
+}
+.btn1:hover {
+  background: white;
+  color: #d82c2e;
+}
+/* Menu */
+
+.navbar {
+  background: #d82c2e;
+  font-size: 12pxs;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.navbar .navbar-expand-lg {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+.navbar .navbar-collapse {
+  text-align: center !important;
+}
+.navbar a {
+  color: #fff !important ; /* !important car bootstrap a donné des couleurs par défaut. on lui indique donc ce qu'il doit priviligier*/
+}
+.navbar-nav .nav-link:hover {
+  color: #d82c2e !important;
+  background-color: #d4d4d4;
+}
+.navbar .navbar-nav {
+  text-align: center !important;
+  margin: 0 auto;
+}
+
+/* ABOUT */
+#about {
+  padding-top: 100px;
+  background: #48d1cc /*#e0ffff*/;
+}
+#about .col-xs {
+  /* ajout pour centrage */
+  margin: 0 auto;
+}
+
+#rounde-circle {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+}
+.profil-picture {
+  /* Centrage dans la div */
+  text-align: center;
+  margin: 0 auto;
+  float: none;
+}
+section .heading h1 {
+  text-align: center;
+  color: aliceblue;
+  font-size: large;
+}
+section .heading h3 {
+  color: #000;
+}
+
+/* SKILLS */
+#sckills {
+  padding-top: 20px;
+  background: #fff;
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  /*ajout pour centrange*/
+  flex-basis: 90%;
+  flex-wrap: wrap;
+}
+.heading h2 {
+  color: #d82c2e;
+}
+/* bg rouge # de bg danger de bootstrap */
+/*ajout pour centrange => container -> container-fluid*/
+.container-fluid .progress-bar {
+  background: #000000 /*#d82c2e*/;
+  backface-visibility: #ddd;
+}
+.container-fluid .col-md-4 {
+  /* height: 15%; h 20 -> 40px => amélioration de l'espacement des cols ecran teléphones */
+  margin: 20px 0; /*margin hb 30 -> 20px*/
+}
+.col-md-6 {
+  padding: 15px;
+}
+/* Experience */
+
+#experience {
+  background: #48d1cc /*#d82c2e*/;
+}
+#experience .heading h2 {
+  color: #fff;
+}
+.timeline {
+  padding: 15px 18px;
+  position: relative;
+  margin: 0 auto;
+}
+.timeline::before {
+  top: 0; /*pour que la ligne commence tout en haut de la section*/
+  bottom: 0; /*pour que la ligne s'arrete tout en bas de la section*/
+  position: absolute;
+  content: " ";
+  width: 5px;
+  background-color: #333;
+  left: 50%; /*Pour que la ligne s'affiche au milieu de la section*/
+}
+/* li de la timeline */
+.timeline > li {
+  /*le signe ">" signifie: le parent direct de la timeline*/
+  margin: 1px;
+  position: relative;
+}
+.timeline > li::after {
+  clear: both; /* pour nettoyer le float left et right */
+}
+.timeline > li::before,
+.timeline > li::after {
+  content: "";
+  display: table;
+}
+.timeline li .timeline-badge {
+  color: #d82c2e;
+  width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: #ddd;
+  border-radius: 100%;
+}
+.timeline-panel-container {
+  width: 50%; /* la width à 50% permet d'afficher l'élément  uniquement sur une mitié de l'espace disponible*/
+  float: left;
+}
+.timeline-panel-container-inverted {
+  width: 50%;
+  float: right; /*Obliger l'élément à s'afficher à droite*/
+}
+.timeline-panel {
+  width: 90%;
+  float: right;
+  margin-right: 40px;
+  border: 1px solid #d4d4d4;
+  border-radius: 7px;
+  padding: 15px 20px;
+  position: relative;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  background-color: #fff;
+}
+
+.timeline-panel-container-inverted .timeline-panel {
+  float: left;
+  margin-left: 40px;
+}
+/* faire les petits triangles qui partent du .timeline-panel et pointent vers la timeline */
+.timeline-panel-container-inverted .timeline-panel ::after {
+  position: absolute;
+  top: 18px;
+  right: -14px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  content: ""; /* pour que le after s'affiche à l'écran, on lui il faut absolument lui donner un contenu*/
+}
+.timeline-panel ::after {
+  position: absolute;
+  top: 18px;
+  right: -14px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  content: "";
+}
+.timeline-panel-container-inverted .timeline-panel ::after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+
+/* Texte contenu dans les timeline-panel */
+.timeline-heading h3 {
+  margin-top: 5px;
+  font-size: 20px;
+}
+.timeline-heading h4 {
+  color: #d82c2e;
+}
+
+/* Formation */
+#formations {
+  background-color: #fff;
+}
+#formations h2 {
+  color: #d82c2e;
+}
+#formations p,
+#experience p {
+  font-size: 13px;
+  margin: 2px;
+}
+.formation-block {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+  background-color: #ddd;
+  border-radius: 10px;
+  border: 2px solid rgb(177, 103, 103);
+  margin-bottom: 20px;
+}
+/* texte contenu dans .formation-block */
+.formation-block h5 {
+  color: #888;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.formation-block .fa-graduation-cap {
+  font-size: 40px;
+}
+.formation-block h3 {
+  color: #d82c2e;
+}
+.formation-block h4 {
+  margin-bottom: 20px;
+}
+.formation-block P {
+  font-weight: bold;
+}
+.formation-block .red-devider {
+  margin-bottom: 15px;
+}
+
+/* Portefolio */
+#portfolio {
+  /* padding-top: 100px; */
+  background: #48d1cc /*#d82c2e*/;
+  margin: 0 auto;
+}
+
+#portfolio .heading h2 {
+  color: #fff;
+}
+#c1 {
+  padding-top: 20px;
+}
+#c2 {
+  padding-top: 30px;
+}
+#portfolio a .img-thumbnail {
+  width: 100%;
+  height: 100%;
+  /*Filtre pour que les img soient par défaut en gris (n&w)*/
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+#portfolio a .img-thumbnail:hover {
+  /*Filtre pour que les img soient colorées si on passe dessus*/
+  filter: none;
+  -webkit-filter: none;
+}
+#portfolio .col-md-4 {
+  padding: 10px;
+}
+/* Recommandations */
+
+#recommandations {
+  background-color: #fff;
+}
+.fa-angle-right,
+.fa-angle-left {
+  color: #d82c2e;
+  font-size: xx-large;
+}
+.carousel-indicators {
+  bottom: 0px;
+}
+.carousel-indicators li {
+  background-color: #f34a16;
+}
+#myCarousel-item {
+  padding: 40px 30px;
+}
+.carousel-item h3 {
+  color: #d82c2e;
+  font-style: italic;
+}
+
+/* Footer */
+#footer {
+  background-color: #333;
+  padding: 20px 0 30px;
+}
+#footer .fa-angle-up {
+  color: #d82c2e;
+  font-size: 25px;
+  margin: 20px;
+  /* Fixer la hauteur évite qu'il y est un jeux avec l'élément qui le suit en cas d'agrandissement avec le hover */
+  height: 30px;
+}
+#footer .fa-angle-up:hover {
+  font-size: 27px;
+}
+
+#footer h5 {
+  color: #fff;
+  font-weight: normal;
+}
+
+/* Contact */
+
+#contact {
+  background: #48d1cc /*#d82c2e*/;
+  margin: 0 auto;
+}
+
+/* formulaire */
+#contact-form {
+  font-size: 20px;
+  color: #fff;
+}
+/* input et label */
+.form-control {
+  height: 50px;
+  font-size: 18px;
+}
+#contact-form .row .col-md-6 {
+  padding: 15px;
+}
+
+/* comments */
+.comments {
+  font-style: italic;
+  font-size: 18px;
+  color: #d82c2e;
+  padding: 1px;
+  height: 25px; /*lui donner une hauteur permet de fixer la hauteur du p et de la garger peut importe qu'il soit remplie ou non, on évite ainsi qu'i soit écrassé si vide*/
+}
+
+/* btn envoyer */
+/* Centrage */
+#contact-form input[type="submit"] {
+  margin: 40px auto 0px;
+  display: block;
+}
+
+/* message thank-you */
+.thank-you {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 22px;
+}
